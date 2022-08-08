@@ -8,59 +8,31 @@
  * @format
  */
 
-import React, { FC, type PropsWithChildren } from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import React, {FC} from 'react';
+import {ScrollView,StatusBar,StyleSheet,Text,View,} from 'react-native';
+import Login from './src/Auth/Login';
+import AuthStackScreen from './Navigation/AuthStack';
 
 
 const App: FC = () => {
 
   return (
-    <SafeAreaView >
-
+    
+    <View  style={styles.main}>
       <StatusBar />
-      <View>
-        <Text>
-          hiii
-        </Text>
+        {/* <Login /> */}
+        <AuthStackScreen />
       </View>
 
-    </SafeAreaView>
+  
   );
 };
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+  main:{
+    flex:1
+  }
+})
+
 
 export default App;
