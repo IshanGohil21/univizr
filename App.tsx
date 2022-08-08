@@ -10,8 +10,7 @@
 
 import React, {FC} from 'react';
 import {ScrollView,StatusBar,StyleSheet,Text,View,} from 'react-native';
-import Login from './src/Auth/Login';
-import AuthStackScreen from './Navigation/AuthStack';
+import AppNavigator from './src/Navigation/RootStack';
 
 
 const App: FC = () => {
@@ -20,8 +19,7 @@ const App: FC = () => {
     
     <View  style={styles.main}>
       <StatusBar />
-        {/* <Login /> */}
-        <AuthStackScreen />
+       <AppNavigator />
       </View>
 
   

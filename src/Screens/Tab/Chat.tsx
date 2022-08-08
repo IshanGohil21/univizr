@@ -1,26 +1,24 @@
 import React, {FC} from "react";
 import { View, Text, TouchableOpacity, StyleSheet, StatusBar, Dimensions } from "react-native";
 
-const Login: FC = (props) => {
+
+const Chat: FC = (props) => {
     // console.log(props);
     return (
         <View style={styles.main} >
             <StatusBar barStyle="default" />
-
             {/* Header */}
-
-            <View style={styles.heading} >
-
+            {/* <View style={styles.heading} > */}
             <TouchableOpacity onPress={() => {
                 props.navigation.navigate('Register')
             }}>
-                <Text style={styles.header}>Login</Text>
+                <Text >Chat</Text>
             </TouchableOpacity>
-            </View>
+            {/* </View> */}
 
-            <View style={styles.body} >
+            {/* <View style={styles.body} >
                 
-            </View>
+            </View> */}
         </View>
     )
 }
@@ -30,16 +28,22 @@ const styles = StyleSheet.create({
         flex:1,
         justifyContent:'center',
         alignItems:'center',
+        
     },
     header:{
-        fontSize: 20, 
-        fontWeight: 'bold',
-        elevation:10,
-        width:'100%',
+        fontSize:20,
+        fontWeight:'bold',
+        padding:40,
+    },
+    heading:{
+       flex:1,
+       elevation:5,
+       width:'100%',
+       alignItems:'center'
     },
     body:{
         flex:3,
     }
 })
 
-export default Login
+export default Chat
