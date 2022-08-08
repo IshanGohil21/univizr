@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
@@ -23,8 +24,8 @@ const MainTab: FC = () => {
         component={Home}
         options={ ({route}) => ({
             tabBarVisible: getTabBarVisibility(route),
-            tabBarIcon: ({color}) => (
-                <Ionicons name='home' size={24} color={color} />   
+            tabBarIcon: ({focused,}) => (
+                < Image source={require('../CommonConfig/Assets/Icon/home1.png')} style={{ height: 20, width: 20, marginTop: 15, tintColor: focused ? 'purple' : 'grey' }} /> 
             )
         })}
         />
@@ -33,8 +34,8 @@ const MainTab: FC = () => {
         name="Schedule"
         component={Schedule}
         options={{ 
-            tabBarIcon: ({ color }) => (
-                <Ionicons name ="calendar-outline" size={24} color={color} />
+            tabBarIcon: ({ focused }) => (
+                < Image source={require('../CommonConfig/Assets/Icon/schedule.png')} style={{ height: 20, width: 20, marginTop: 15, tintColor: focused ? 'purple' : 'grey' }} /> 
             )
          }}
         />
@@ -43,8 +44,8 @@ const MainTab: FC = () => {
         name="Chat"
         component={Chat}
         options={{ 
-            tabBarIcon: ({ color }) => (
-                <Ionicons name ="chatbox-ellipses" size={24} color={color} />
+            tabBarIcon: ({ focused }) => (
+                < Image source={require('../CommonConfig/Assets/Icon/chat.png')} style={{ height: 20, width: 20, marginTop: 15, tintColor: focused ? 'purple' : 'grey' }} /> 
             )
          }}
         />
@@ -53,8 +54,8 @@ const MainTab: FC = () => {
         name="Payment"
         component={Payment}
         options={{ 
-            tabBarIcon: ({ color }) => (
-                <Ionicons name ="wallet" size={24} color={color} />
+            tabBarIcon: ({ focused }) => (
+                < Image source={require('../CommonConfig/Assets/Icon/wallet.png')} style={{ height: 20, width: 20, marginTop: 15, tintColor: focused ? 'purple' : 'grey' }} /> 
             )
          }}
         />
@@ -63,8 +64,8 @@ const MainTab: FC = () => {
         name="Profile"
         component={Profile}
         options={{ 
-            tabBarIcon: ({ color }) => (
-                <Ionicons name ="person" size={24} color={color} />
+            tabBarIcon: ({ focused }) => (
+                < Image source={require('../CommonConfig/Assets/Icon/user.png')} style={{ height: 20, width: 20, marginTop: 15, tintColor: focused ? 'purple' : 'grey' }} /> 
             )
          }}
         />
@@ -88,5 +89,22 @@ const HomeStackScreen: FC = () => {
                 }}
             />
         </HomeStack.Navigator>
+    )
+}
+
+
+const ScheduleStack = createStackNavigator();
+const ScheduleStackScreen: FC = () => {
+    return (
+        <ScheduleStack.Navigator headerMode="none">
+            <ScheduleStack.Screen 
+                name="Schedule"
+                component={Schedule}
+                options={{
+                    headerLeft: () => null,
+                    color:'purple'
+                }}
+            />
+        </ScheduleStack.Navigator>
     )
 }
